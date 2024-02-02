@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>WebShop</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<header th:replace="~{fragments/navigation :: header}"></header>
+    <p class="productdata" th:text="${data}"></p>
+</body>
+</html>

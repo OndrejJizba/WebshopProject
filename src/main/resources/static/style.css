@@ -1,0 +1,63 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.navigation-button {
+    align-items: center;
+    padding: 6px 14px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    background-color: #367AF6;
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+.navigation {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    margin-bottom: 0;
+    color: #367AF6;
+}
+
+hr {
+    color: #367AF6;
+}
+
+table {
+    border-collapse: collapse;
+    width: 1000px;
+}
+table td {
+    padding: 15px;
+}
+table thead td {
+    background-color: #54585d;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 13px;
+    border: 1px solid #54585d;
+}
+table tbody td {
+    color: #636363;
+    border: 1px solid #dddfe1;
+}
+table tbody tr {
+    background-color: #f9fafb;
+}
+table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.productdata {
+    font-size: 30px;
+    font-weight: bold;
+}

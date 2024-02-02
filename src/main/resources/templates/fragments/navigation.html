@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/styles.css}"/>
+</head>
+<body th:fragment="header">
+<h1>My Shop</h1>
+<hr>
+<div class="navigation">
+    <form action="/only-available" method="get">
+        <button type="submit" class="navigation-button">ONLY AVAILABLE</button>
+    </form>
+    <form action="/cheapest-first" method="get">
+        <button type="submit" class="navigation-button">CHEAPEST FIRST</button>
+    </form>
+    <form action="/contains-asus" method="get">
+        <button type="submit" class="navigation-button">CONTAINS ASUS</button>
+    </form>
+    <form action="/average-stock" method="get">
+        <button type="submit" class="navigation-button">AVERAGE STOCK</button>
+    </form>
+    <form action="/most-expensive-available" method="get">
+        <button type="submit" class="navigation-button">MOST EXPENSIVE AVAILABLE</button>
+    </form>
+</div>
+</body>
+</html>
