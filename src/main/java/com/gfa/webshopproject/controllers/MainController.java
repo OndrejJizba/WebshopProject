@@ -5,6 +5,8 @@ import com.gfa.webshopproject.services.Shop;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -67,5 +69,15 @@ public class MainController {
         String mostExpensiveAvailable = mostExpensiveItem != null ? String.valueOf(mostExpensiveItem.getDescription()) : "No items available";
         model.addAttribute("data", "The most expensive item: " + mostExpensiveAvailable);
         return "productdata";
+    }
+
+    @PostMapping ("/search")
+    public String searching(@RequestParam String searchFor, Model model) {
+        List<ShopItem> shopList = shop.getShop();
+        shopList = shopList.stream()
+                .filter(i -> i.getDescription().contains(searchFor) ||
+                        i.getName().contains(searchFor)).collect(Collectors.toList());
+        model.addAttribute("shopList", shopList);
+        return "webshop";
     }
 }

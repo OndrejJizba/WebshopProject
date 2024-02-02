@@ -6,7 +6,10 @@
     <link rel="stylesheet" th:href="@{/styles.css}"/>
 </head>
 <body th:fragment="header">
-<h1>My Shop</h1>
+<div id="header">
+    <h1><a href="webshop" id="myshopbutton">My Shop</a></h1>
+
+</div>
 <hr>
 <div class="navigation">
     <form action="/only-available" method="get">
@@ -23,6 +26,13 @@
     </form>
     <form action="/most-expensive-available" method="get">
         <button type="submit" class="navigation-button">MOST EXPENSIVE AVAILABLE</button>
+    </form>
+</div>
+<div id="searchform">
+    <form action="/search" method="post">
+        <label for="search" id="searchfor">Search for:</label><br>
+        <input type="text" name="searchFor" id="search" placeholder="GPU, Samsung,...">
+        <button type="submit" id="searchbutton">Search</button>
     </form>
 </div>
 </body>
