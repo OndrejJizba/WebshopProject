@@ -5,6 +5,7 @@ import com.gfa.webshopproject.services.Shop;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -80,4 +81,20 @@ public class MainController {
         model.addAttribute("shopList", shopList);
         return "webshop";
     }
+
+    @GetMapping("/more-filters")
+    public String getMoreFilters(Model model){
+        List<ShopItem> shopList = shop.getShop();
+        model.addAttribute("shopList", shopList);
+        return "more-filters";
+    }
+
+    @GetMapping("/filter-by-year/{releaseYear}")
+    public String filterByYear (@PathVariable int releaseYear, Model model) {
+        List<ShopItem> shopList = shop.getShop();
+        shopList = shopList.stream().filter(i -> i.getReleaseYear() == releaseYear).collect(Collectors.toList());
+        model.addAttribute("shopList", shopList);
+        return "more-filters";
+    }
+
 }

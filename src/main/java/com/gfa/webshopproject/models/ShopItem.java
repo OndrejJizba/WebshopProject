@@ -5,12 +5,14 @@ public class ShopItem {
     private String description;
     private int price;
     private int quantityOfStock;
+    private int releaseYear;
 
-    public ShopItem(String name, String description, int price, int quantityOfStock) {
+    public ShopItem(String name, String description, int price, int quantityOfStock, int releaseYear) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.quantityOfStock = quantityOfStock;
+        this.releaseYear = releaseYear;
     }
 
     public ShopItem() {
@@ -46,5 +48,13 @@ public class ShopItem {
 
     public void setQuantityOfStock(int quantityOfStock) {
         this.quantityOfStock = quantityOfStock;
+    }
+
+    public int getReleaseYear() {
+        return releaseYear;
+    }
+
+    public void setReleaseYear(int releaseYear) {
+        this.releaseYear = releaseYear;
     }
 }

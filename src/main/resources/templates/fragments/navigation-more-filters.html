@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/styles.css}"/>
+</head>
+<body>
+<body th:fragment="header">
+<div id="header">
+    <h1><a href="/webshop" id="myshopbutton">My Shop</a></h1>
+    <h1><a href="/more-filters" id="morebutton">More</a></h1>
+</div>
+<hr>
+<div class="navigation">
+    <form action="/filter-by-year/2020" method="get">
+        <button type="submit" class="navigation-button">RELEASED IN 2020</button>
+    </form>
+    <form action="/filter-by-year/2022" method="get">
+        <button type="submit" class="navigation-button">RELEASED IN 2022</button>
+    </form>
+    <form action="/filter-by-year/2023" method="get">
+        <button type="submit" class="navigation-button">RELEASED IN 2023</button>
+    </form>
+    <form action="" method="get">
+        <button type="submit" class="navigation-button">EURO</button>
+    </form>
+    <form action="" method="get">
+        <button type="submit" class="navigation-button">ORIGINAL CURRENCY</button>
+    </form>
+</div>
+
+</body>
+</html>

@@ -13,12 +13,12 @@ body {
     border: none;
     color: #fff;
     background-color: #367AF6;
-    margin-right: 20px;
     font-size: 16px;
 }
 
 .navigation {
     display: flex;
+    justify-content: space-between;
     margin-top: 20px;
     margin-bottom: 30px;
 }
@@ -100,4 +100,15 @@ table tbody tr:nth-child(odd) {
 
 #searchform {
     margin-bottom: 15px;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#morebutton {
+    margin-left: auto;
+    text-decoration: none;
+    color: #367AF6;
 }
