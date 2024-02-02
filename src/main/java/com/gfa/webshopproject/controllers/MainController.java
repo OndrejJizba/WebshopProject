@@ -9,10 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Controller
@@ -72,7 +70,7 @@ public class MainController {
         return "productdata";
     }
 
-    @PostMapping ("/search")
+    @PostMapping("/search")
     public String searching(@RequestParam String searchFor, Model model) {
         List<ShopItem> shopList = shop.getShop();
         shopList = shopList.stream()
@@ -83,14 +81,14 @@ public class MainController {
     }
 
     @GetMapping("/more-filters")
-    public String getMoreFilters(Model model){
+    public String getMoreFilters(Model model) {
         List<ShopItem> shopList = shop.getShop();
         model.addAttribute("shopList", shopList);
         return "more-filters";
     }
 
     @GetMapping("/filter-by-year/{releaseYear}")
-    public String filterByYear (@PathVariable int releaseYear, Model model) {
+    public String filterByYear(@PathVariable int releaseYear, Model model) {
         List<ShopItem> shopList = shop.getShop();
         shopList = shopList.stream().filter(i -> i.getReleaseYear() == releaseYear).collect(Collectors.toList());
         model.addAttribute("shopList", shopList);

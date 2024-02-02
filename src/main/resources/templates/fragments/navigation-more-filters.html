@@ -29,6 +29,15 @@
         <button type="submit" class="navigation-button">ORIGINAL CURRENCY</button>
     </form>
 </div>
+<div id="filterbypricecontent">
+    <form action="/filter-by-price" method="post">
+        <button type="submit" class="filterpricebutton">Above</button>
+        <button type="submit" class="filterpricebutton">Below</button>
+        <button type="submit" class="filterpricebutton">Exactly</button>
+            <label for="filterbyprice">Filter by price: </label>
+            <input type="number" name="filterbyprice" id="filterbyprice">
+    </form>
+</div>
 
 </body>
 </html>
